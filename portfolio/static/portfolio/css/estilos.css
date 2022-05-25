@@ -116,7 +116,6 @@ footer {
 }
 
 .dropdown {
-  position: relative;
   display: inline-block;
 }
 
@@ -133,4 +132,45 @@ footer {
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+.escolas {
+  display: flex;
+  flex-flow: row wrap;
+  background-color: #917C67;
+  padding: 20px;
+}
+
+.escola {
+  background-color: white;
+  height: 250px;
+  width: 350px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 15px #888888;
+  padding: 10px 20px;
+  margin: 10px;
+}
+
+.tit-escola {
+  font-size: 1.3em;
+}
+
+.tit-escola:link {
+  color: #918B86;
+  text-decoration: none;
+}
+
+.tit-escola:visited {
+  color: #918B86;
+  text-decoration: none;
+}
+
+.tit-escola:hover {
+  color: #918B86;
+  text-decoration: none;
+}
+
+.tit-escola:active {
+  color: #918B86;
+  text-decoration: none;
 }

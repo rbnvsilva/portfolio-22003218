@@ -2,15 +2,4 @@
 
 {% block main %}
 	<h3>Blog</h3>
-    {% for post in posts %}
-        <p>{{ post.titulo }}</p>
-    {% endfor %}
-
-    <h3>New Post</h3>
-    <form method="POST" action="">
-        {% csrf_token %}
-        
-        {{ form.as_p }}
-        <input type="submit" value="Submit">
-    </form>
 {% endblock main %}

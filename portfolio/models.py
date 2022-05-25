@@ -1,11 +1,46 @@
 from django.db import models
 
-# Create your models here.
-class Post(models.Model):
-    autor = models.CharField(max_length=30)
-    data = models.DateTimeField(auto_now_add=True)
-    titulo = models.CharField(max_length=100)
-    descricao = models.CharField(max_length=150)
+class Pessoa(models.Model):
+    nome = models.CharField(max_length=50)
+    link1 = models.CharField(max_length=300)
+    link2 = models.CharField(max_length=300)
+    
+    def __str__(self):
+        return self.nome
+
+class Linguagem(models.Model):
+    nome = models.CharField(max_length=50)
+    descricao = models.TextField(max_length=500)
+
+class Cadeira(models.Model):
+    nome = models.CharField(max_length=50)
+    ano = models.IntegerField()
+    semestre = models.IntegerField()
+    ects = models.IntegerField()
+    ano_letivo = models.CharField(max_length=10)
+    topicos = models.TextField()
+    ranking = models.IntegerField()
+    professores = models.ManyToManyField(Pessoa)
+    pagina_cadeira = models.CharField(max_length=300)
+
+    def __str__(self):
+        return self.nome
+
+class Projeto(models.Model):
+    titulo = models.CharField(max_length=50)
+    descricao = models.TextField(max_length=500)
+    ano_realizacao = models.IntegerField()
+    cadeira = models.ForeignKey(Cadeira, on_delete=models.CASCADE)
+    participantes = models.ManyToManyField(Pessoa)
+    link_github = models.CharField(max_length=300)
 
     def __str__(self):
         return self.titulo
+
+class Escola(models.Model):
+    nome = models.CharField(max_length=50)
+    periodo = models.CharField(max_length=50)
+    local = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.nome
