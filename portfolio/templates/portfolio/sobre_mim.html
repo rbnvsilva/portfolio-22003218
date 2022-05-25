@@ -37,6 +37,14 @@
         </div>
         {% endfor %}
     </div>
-    <h1 class="titulo">Aptidões e competências pessoais</h1>
     <h1 class="titulo">Interesses e hobbies</h1>
+    <div class="interesses">
+        {% for interesse in interesses %}
+        <div class="interesse">     
+            <p class="tit-interesse"> {{interesse.nome}}</p>
+            <br>
+            <p>Descricao: {{interesse.descricao}}</p>
+        </div>
+        {% endfor %}
+    </div>
 {% endblock main %}

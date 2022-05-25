@@ -1,6 +1,60 @@
 {% extends 'portfolio/layout.html' %}
 
 {% block main %}
-	<h3>Programacao Web</h3>
-    <p>texto</p>
+    <h1 class="titulo">Tecnologias</h1>
+    <h1 class="titulo2">Front-End</h1>
+    <div class="tecnologias">
+        {% for linguagem in linguagens %}
+            {% if linguagem.tipo == 1 %}
+            <div class="tecnologia">     
+                <p>{{linguagem.nome}}</p>
+                <br>
+                <p>Descricao: {{linguagem.descricao}}</p>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <h1 class="titulo2">Back-End</h1>
+    <div class="tecnologias">
+        {% for linguagem in linguagens %}
+            {% if linguagem.tipo == 2 %}
+            <div class="tecnologia">     
+                <p>{{linguagem.nome}}</p>
+                <br>
+                <p>Descricao: {{linguagem.descricao}}</p>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <h1 class="titulo2">Outras</h1>
+    <div class="tecnologias">
+        {% for linguagem in linguagens %}
+            {% if linguagem.tipo == 3 %}
+            <div class="tecnologia">     
+                <p>{{linguagem.nome}}</p>
+                <br>
+                <p>Descricao: {{linguagem.descricao}}</p>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <h1 class="titulo">Sobre este website</h1>
+    <h1 class="titulo2">Estrutura do site</h1>
+    <h1 class="titulo2">Diagrama</h1>
+    <h1 class="titulo2">Tecnologias usadas</h1>
+    <h1 class="titulo">Laboratorios</h1>
+    <div class="container">
+        <div class="container-labs">
+            {% for laboratorio in laboratorios %}
+            <a href="{{laboratorio.link}}">
+                <div class="lab">
+                    <div class="numero">
+                        <p>{{laboratorio.numero}}</p>
+                    </div>
+                    <div class="tit-lab">{{laboratorio.nome}}</div>
+                </div>
+            {% endfor %}
+            </a>
+        </div>
+    <h1 class="titulo">Quizz</h1>
 {% endblock main %}

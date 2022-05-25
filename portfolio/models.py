@@ -11,6 +11,10 @@ class Pessoa(models.Model):
 class Linguagem(models.Model):
     nome = models.CharField(max_length=50)
     descricao = models.TextField(max_length=500)
+    tipo = models.IntegerField()
+
+    def __str__(self):
+        return self.nome
 
 class Cadeira(models.Model):
     nome = models.CharField(max_length=50)
@@ -44,3 +48,28 @@ class Escola(models.Model):
 
     def __str__(self):
         return self.nome
+
+class Interesse(models.Model):
+    nome = models.CharField(max_length=50)
+    descricao = models.TextField(max_length=500)
+
+    def __str__(self):
+        return self.nome
+
+class Laboratorio(models.Model):
+    nome = models.CharField(max_length=50)
+    numero = models.IntegerField()
+    link = models.CharField(max_length=300)
+    
+    def __str__(self):
+        return self.nome       
+
+class Post(models.Model):
+    autor = models.CharField(max_length=50)
+    data = models.DateField()
+    titulo = models.CharField(max_length=200)
+    descricao = models.TextField(max_length=500)
+    link = models.CharField(max_length=300)
+
+    def __str__(self):
+        return self.titulo        

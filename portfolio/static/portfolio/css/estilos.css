@@ -74,6 +74,16 @@ footer {
   justify-content: center;
 }
 
+.titulo2 {
+  display: flex;
+  font-size: 2em;
+  padding: 10px;
+  background-color: #917C67;
+  color: white;
+  align-items: flex-start;
+  justify-content: left;
+}
+
 .cadeiras {
   display: flex;
   flex-flow: row wrap;
@@ -173,4 +183,117 @@ footer {
 .tit-escola:active {
   color: #918B86;
   text-decoration: none;
+}
+
+.interesses {
+  display: flex;
+  flex-flow: row wrap;
+  background-color: #917C67;
+  padding: 20px;
+}
+
+.interesse {
+  background-color: white;
+  height: 250px;
+  width: 350px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 15px #888888;
+  padding: 10px 20px;
+  margin: 10px;
+}
+
+.tit-interesse {
+  font-size: 1.3em;
+  color: #918B86;
+}
+
+.tecnologias {
+  display: flex;
+  flex-flow: row wrap;
+  background-color: #917C67;
+  padding: 20px;
+}
+
+.tecnologia {
+  background-color: white;
+  height: 250px;
+  width: 350px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 15px #888888;
+  padding: 10px 20px;
+  margin: 10px;
+}
+
+.tit-tecnologia {
+  font-size: 1.3em;
+  color: #918B86;
+}
+
+.container {
+  background-color: #917C67;
+  display: grid;
+  grid-template-areas: 
+  'labs';
+  grid-template-columns: 1fr;
+  padding: 20px;
+}
+
+.container-labs {
+  display: grid;
+  grid-area: labs;
+  grid-template-areas:
+  'lab lab lab lab lab';
+  grid-template-columns: 350px 350px 350px 350px;
+  gap: 20px;
+}
+
+.lab {
+  position: relative;
+  background-color: rgba(211, 211, 211, 0.5);
+  grid-area: lab;
+  width: 350px;
+  height: 150px;
+  border-radius: 20px;
+}
+
+.lab:hover {
+  animation-name: lab-ani;  
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes lab-ani {
+  0% {transform: rotate(0deg);}
+ 50% {transform: rotate(7deg);}
+ 90% {transform: rotate(-7deg);}
+ 100% {transform: rotate(0deg);}
+}
+
+.numero {
+  background-color: white;
+  position: absolute;
+  height: 150px;
+  width: 70px;
+  border-radius: 20px 0px 0px 20px;
+}
+
+.numero > p {
+  position: absolute;
+  top: 50px;
+  left: 20px;
+  font-size: 3rem;
+  color: black;
+}
+
+.tit-lab {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  top: 70px;
+  left: 75px;
+  color: white;
 }
