@@ -45,6 +45,8 @@ class Escola(models.Model):
     nome = models.CharField(max_length=50)
     periodo = models.CharField(max_length=50)
     local = models.CharField(max_length=200)
+    image = models.FileField(upload_to="uploads/")
+    link = models.CharField(max_length=300)
 
     def __str__(self):
         return self.nome
@@ -52,7 +54,8 @@ class Escola(models.Model):
 class Interesse(models.Model):
     nome = models.CharField(max_length=50)
     descricao = models.TextField(max_length=500)
-
+    image = models.FileField(upload_to="uploads/")
+    
     def __str__(self):
         return self.nome
 

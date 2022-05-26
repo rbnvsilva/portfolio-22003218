@@ -19,7 +19,7 @@
             </div>
             <p>Ranking (1-5): {{cadeira.ranking}}</p>
             <p>Professores: {% for professor in cadeira.professores.all %} 
-                <a href="{{professor.link1}}">{{professor.nome}}</a> / <a href="{{professor.link2}}">LinkedIn</a> <br>{% endfor %}
+                <a class="link-pessoa" href="{{professor.link1}}">{{professor.nome}}</a> / <a class="link-pessoa" href="{{professor.link2}}">LinkedIn</a> <br>{% endfor %}
             </p>
         </div>
         {% endfor %}
@@ -28,12 +28,13 @@
     <div class="escolas">
         {% for escola in escolas %}
         <div class="escola">     
-            <a class="tit-escola" href="https://sites.google.com/aeaquaalba.pt/ae-aqua-alba-agualva-sintra/in%C3%ADcio?authuser=0">
+            <a class="tit-escola" href="{{escola.link}}">
                 <p>{{escola.nome}}</p>
             </a>
             <br>
             <p>Periodo: {{escola.periodo}}</p>
             <p>Local: {{escola.local}}</p>
+            <p><img class="img-escola" src="{{escola.image.url}}"></p>
         </div>
         {% endfor %}
     </div>
@@ -43,7 +44,9 @@
         <div class="interesse">     
             <p class="tit-interesse"> {{interesse.nome}}</p>
             <br>
-            <p>Descricao: {{interesse.descricao}}</p>
+            <p>{{interesse.descricao}}</p>
+            <br>
+            <p><img class="img-interesse" src="{{interesse.image.url}}"></p>
         </div>
         {% endfor %}
     </div>

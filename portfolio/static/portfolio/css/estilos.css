@@ -125,6 +125,26 @@ footer {
   text-decoration: none;
 }
 
+.link-pessoa:link {
+  color: #A47E5A;
+  text-decoration: none;
+}
+
+.link-pessoa:visited {
+  color: #A47E5A;
+  text-decoration: none;
+}
+
+.link-pessoa:hover {
+  color: #A47E5A;
+  text-decoration: none;
+}
+
+.link-pessoa:active {
+  color: #A47E5A;
+  text-decoration: none;
+}
+
 .dropdown {
   display: inline-block;
 }
@@ -185,6 +205,13 @@ footer {
   text-decoration: none;
 }
 
+.img-escola {
+  position: relative;
+  left: 170px;
+  width: 130px;
+  height: 130px;
+}
+
 .interesses {
   display: flex;
   flex-flow: row wrap;
@@ -194,12 +221,16 @@ footer {
 
 .interesse {
   background-color: white;
-  height: 250px;
+  height: 330px;
   width: 350px;
   border-radius: 20px;
   box-shadow: 5px 5px 15px #888888;
   padding: 10px 20px;
   margin: 10px;
+}
+
+.img-interesse {
+  border-radius: 20px;
 }
 
 .tit-interesse {
