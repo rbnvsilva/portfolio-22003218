@@ -70,9 +70,8 @@ class Laboratorio(models.Model):
 
 class Post(models.Model):
     autor = models.CharField(max_length=50)
-    data = models.DateField()
+    data = models.DateField(auto_now_add=True)
     titulo = models.CharField(max_length=200)
-    descricao = models.TextField(max_length=500)
     link = models.CharField(max_length=300)
 
     def __str__(self):

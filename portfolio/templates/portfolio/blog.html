@@ -1,5 +1,18 @@
 {% extends 'portfolio/layout.html' %}
 
 {% block main %}
-	<h3>Blog</h3>
+	<h1 class="titulo">Posts</h1>
+	<div class="posts">
+		{% for post in posts %}
+		<div class="post">     
+			<p class="tit-post">{{post.titulo}}</p>
+			<br>
+			<a href="{{post.link}}">Link para o GitHub</a>
+			<br>
+			<br>
+			<p>{{post.autor}} em {{post.data}}</p>
+		</div>
+		{% endfor %}
+	</div>
+	<a class="button" href="{% url 'portfolio:criar_post' %}">Criar Post</a>
 {% endblock main %}
