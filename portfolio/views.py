@@ -35,5 +35,8 @@ def blog_view(request):
 
 	return render(request, 'portfolio/blog.html', context)
 
+def sobre_website_view(request):
+	return render(request, 'portfolio/sobre_website.html')
+
 def contacto_view(request):
 	return render(request, 'portfolio/contacto.html')

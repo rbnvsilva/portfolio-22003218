@@ -7,9 +7,11 @@
         {% for linguagem in linguagens %}
             {% if linguagem.tipo == 1 %}
             <div class="tecnologia">     
-                <p>{{linguagem.nome}}</p>
+                <p class="tit-tecnologia">{{linguagem.nome}}</p>
                 <br>
-                <p>Descricao: {{linguagem.descricao}}</p>
+                <p>{{linguagem.descricao}}</p>
+                <br>
+                <p><img class="img-tecnologia" src="{{linguagem.image.url}}"></p>
             </div>
             {% endif %}
         {% endfor %}
@@ -19,9 +21,11 @@
         {% for linguagem in linguagens %}
             {% if linguagem.tipo == 2 %}
             <div class="tecnologia">     
-                <p>{{linguagem.nome}}</p>
+                <p class="tit-tecnologia">{{linguagem.nome}}</p>
                 <br>
-                <p>Descricao: {{linguagem.descricao}}</p>
+                <p>{{linguagem.descricao}}</p>
+                <br>
+                <p><img class="img-tecnologia" src="{{linguagem.image.url}}"></p>
             </div>
             {% endif %}
         {% endfor %}
@@ -31,17 +35,15 @@
         {% for linguagem in linguagens %}
             {% if linguagem.tipo == 3 %}
             <div class="tecnologia">     
-                <p>{{linguagem.nome}}</p>
+                <p class="tit-tecnologia">{{linguagem.nome}}</p>
                 <br>
-                <p>Descricao: {{linguagem.descricao}}</p>
+                <p>{{linguagem.descricao}}</p>
+                <br>
+                <p><img class="img-tecnologia" src="{{linguagem.image.url}}"></p>
             </div>
             {% endif %}
         {% endfor %}
     </div>
-    <h1 class="titulo">Sobre este website</h1>
-    <h1 class="titulo2">Estrutura do site</h1>
-    <h1 class="titulo2">Diagrama</h1>
-    <h1 class="titulo2">Tecnologias usadas</h1>
     <h1 class="titulo">Laboratorios</h1>
     <div class="container">
         <div class="container-labs">

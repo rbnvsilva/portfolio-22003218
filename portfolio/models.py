@@ -12,6 +12,7 @@ class Linguagem(models.Model):
     nome = models.CharField(max_length=50)
     descricao = models.TextField(max_length=500)
     tipo = models.IntegerField()
+    image = models.FileField(upload_to="uploads/")
 
     def __str__(self):
         return self.nome
