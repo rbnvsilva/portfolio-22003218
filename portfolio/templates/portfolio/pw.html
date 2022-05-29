@@ -48,15 +48,21 @@
     <div class="container">
         <div class="container-labs">
             {% for laboratorio in laboratorios %}
-            <a href="{{laboratorio.link}}">
+            <a href="{{laboratorio.link}}" target="_blank">
                 <div class="lab">
                     <div class="numero">
                         <p>{{laboratorio.numero}}</p>
                     </div>
                     <div class="tit-lab">{{laboratorio.nome}}</div>
                 </div>
-            {% endfor %}
             </a>
+            {% endfor %}
         </div>
     <h1 class="titulo">Quizz</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {{form.as_p}}
+        <input class="button" type="submit" value="Submit">
+    </form>
 {% endblock main %}

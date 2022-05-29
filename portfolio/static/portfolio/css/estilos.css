@@ -366,19 +366,19 @@ footer {
 .button {
   position: relative;
 	box-shadow: 0px 1px 0px 0px #1c1b18;
-	background:linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
-	background-color:#eae0c2;
-	border-radius:15px;
-	border:2px solid #333029;
-	display:inline-block;
-	cursor:pointer;
-	color:black;
-	font-family:Arial;
-	font-size:14px;
-	font-weight:bold;
-	padding:12px 16px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #ffffff;
+	background: linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
+	background-color: #eae0c2;
+	border-radius: 15px;
+	border: 2px solid #333029;
+	display: inline-block;
+	cursor: pointer;
+	color: black;
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 12px 16px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #ffffff;
   left: 900px;
 }
 
@@ -390,4 +390,104 @@ footer {
 .button:active {
 	position:relative;
 	top:1px;
+}
+
+.redes {
+  display: flex;
+  flex-flow: row wrap;
+  background-color: #917C67;
+  padding: 20px;
+  gap: 70px;
+}
+
+.rede {
+  position: relative;
+  background-color: rgba(211, 211, 211, 0.5);
+  grid-area: lab;
+  width: 350px;
+  height: 150px;
+  border-radius: 20px;
+}
+
+.img-rede {
+  background-color: white;
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  border-radius: 20px 0px 0px 20px;
+}
+
+.tit-rede {
+  font-size: 1.3em;
+}
+
+.tit-rede:link {
+  color: #918B86;
+  text-decoration: none;
+}
+
+.tit-rede:visited {
+  color: #918B86;
+  text-decoration: none;
+}
+
+.tit-rede:hover {
+  color: #918B86;
+  text-decoration: none;
+}
+
+.tit-rede:active {
+  color: #918B86;
+  text-decoration: none;
+}
+
+.rede-descricao {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  top: 70px;
+  left: 120px;
+  color: white;
+}
+
+.sobre-site {
+  height: 30vh;
+  background-color: white;
+  padding: 20px;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  width: 700px;
+  height: 750px;
+}
+
+.diagrama {
+  position: absolute;
+  top: 250px;
+  left: 900px;
+  color: white;
+}
+
+.projetos {
+  display: flex;
+  flex-flow: row wrap;
+  background-color: #917C67;
+  padding: 20px;
+}
+
+.projeto {
+  background-color: white;
+  height: 410px;
+  width: 350px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 15px #888888;
+  padding: 10px 20px;
+  margin: 10px;
+}
+
+.tit-projeto {
+  font-size: 1.3em;
+  color: #918B86;
 }

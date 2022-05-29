@@ -1,6 +1,17 @@
 {% extends 'portfolio/layout.html' %}
 
 {% block main %}
-	<h3>Contacto</h3>
-    <p>texto</p>
+<h1 class="titulo">Contacto</h1>
+<div class="redes">
+    {% for rede in redes %}
+    <a class="tit-rede" href="{{rede.link}}" target="_blank">
+        <div class="rede">
+            <div class="img-rede">
+                <p><img class="img-rede" src="{{rede.image.url}}"></p>
+            </div>
+            <div class="rede-descricao">{{rede.descricao}}</div>
+        </div>
+    </a>
+    {% endfor %}
+</div>
 {% endblock main %}

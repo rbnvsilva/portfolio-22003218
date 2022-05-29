@@ -75,4 +75,23 @@ class Post(models.Model):
     link = models.CharField(max_length=300)
 
     def __str__(self):
-        return self.titulo        
+        return self.titulo
+
+class Quiz(models.Model):
+    nome_pessoa = models.CharField(max_length=60)
+    pergunta1 = models.CharField(max_length=60)
+    pergunta2 = models.CharField(max_length=60)
+    pergunta3 = models.CharField(max_length=60)
+    pergunta4 = models.CharField(max_length=60)
+    pergunta5 = models.CharField(max_length=60)
+    
+    def __str__(self):
+        return self.nome_pessoa
+
+class Rede(models.Model):
+    descricao = models.TextField(max_length=500)
+    image = models.FileField(upload_to="uploads/")
+    link = models.CharField(max_length=300)
+    
+    def __str__(self):
+        return self.descricao       

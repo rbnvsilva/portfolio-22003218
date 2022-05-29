@@ -5,7 +5,7 @@
     <div class="cadeiras">
         {% for cadeira in cadeiras %}
         <div class="cadeira">     
-            <a class="tit-cadeira" href="https://www.ulusofona.pt/licenciaturas/engenharia-informatica/fundamentos-de-fisica/ULHT260-7336">
+            <a class="tit-cadeira" href="https://www.ulusofona.pt/licenciaturas/engenharia-informatica/fundamentos-de-fisica/ULHT260-7336" target="_blank">
                 <p>{{cadeira.nome}} ({{cadeira.ano_letivo}})</p>
             </a>
             <br>
@@ -19,7 +19,7 @@
             </div>
             <p>Ranking (1-5): {{cadeira.ranking}}</p>
             <p>Professores: {% for professor in cadeira.professores.all %} 
-                <a class="link-pessoa" href="{{professor.link1}}">{{professor.nome}}</a> / <a class="link-pessoa" href="{{professor.link2}}">LinkedIn</a> <br>{% endfor %}
+                <a class="link-pessoa" href="{{professor.link1}}" target="_blank">{{professor.nome}}</a> / <a class="link-pessoa" href="{{professor.link2}}" target="_blank">LinkedIn</a> <br>{% endfor %}
             </p>
         </div>
         {% endfor %}
@@ -28,7 +28,7 @@
     <div class="escolas">
         {% for escola in escolas %}
         <div class="escola">     
-            <a class="tit-escola" href="{{escola.link}}">
+            <a class="tit-escola" href="{{escola.link}}" target="_blank">
                 <p>{{escola.nome}}</p>
             </a>
             <br>

@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
-from .models import Linguagem, Cadeira, Projeto, Escola, Interesse, Laboratorio, Post
-from .forms import PostForm
+from .models import Linguagem, Cadeira, Projeto, Escola, Interesse, Laboratorio, Post, Rede
+from .forms import PostForm, QuizForm
 
 def home_view(request):
 	return render(request, 'portfolio/home.html')
@@ -24,12 +24,18 @@ def projetos_view(request):
 	return render(request, 'portfolio/projetos.html', context)
 
 def pw_view(request):
-	context = {
+    form = QuizForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect(reverse_lazy('portfolio:pw'))
+
+    context = {
         'linguagens': Linguagem.objects.all(),
-        'laboratorios' : Laboratorio.objects.all(),
+        'laboratorios': Laboratorio.objects.all(),
+        'form': form,
     }
 
-	return render(request, 'portfolio/pw.html', context)
+    return render(request, 'portfolio/pw.html', context)
 
 def blog_view(request):
     context = {
@@ -54,4 +60,8 @@ def sobre_website_view(request):
 	return render(request, 'portfolio/sobre_website.html')
 
 def contacto_view(request):
-	return render(request, 'portfolio/contacto.html')
+    context = {
+        'redes': Rede.objects.all(),
+    }
+
+    return render(request, 'portfolio/contacto.html', context)

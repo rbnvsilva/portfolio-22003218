@@ -1,6 +1,58 @@
 {% extends 'portfolio/layout.html' %}
 
 {% block main %}
-	<h3>Contacto</h3>
-    <p>texto</p>
+    <h1 class="titulo">Sobre este website</h1>
+    <div class="sobre-site">
+        <p>
+            Este website foi criado pois faz parte da avaliacao da cadeira Programacao Web previamente referida.
+            <br>
+            <br>
+            Foi realizado com as linguagens HTML, CSS e Python (Django) e hospedado no heroku.
+            <br>
+            <br>
+            Ao lado, encontra-se o diagrama de classes para este website, classes criadas atraves da linguagem Python e manipuladas a partir do painel de admin do Django.
+            <br>
+            <br>
+            Este website tem a seguinte estrutura:
+            <br>
+            <br>
+            - Home (Hero page)
+            <br>
+            - Sobre mim
+            <br>
+            . Licenciatura
+            <br>
+            . Educação
+            <br>
+            . Interesses e hobbies
+            <br>
+            - Projetos
+            <br>
+            - Programacao Web
+            <br>
+            . Tecnologias
+            <br>
+            .. Front-end
+            <br>
+            .. Back-end
+            <br>
+            .. Outras
+            <br>
+            . Laboratorios
+            <br>
+            . Quiz
+            <br>
+            - Sobre este website
+            <br>
+            - Blog
+            <br>
+            - Contacto
+            <br>
+            - Rodapé
+        </p>
+    </div>
+    <div class="diagrama">
+        {% load static %}
+        <img src="{% static 'portfolio/images/diagrama.jpg' %}" alt="">
+    </div>
 {% endblock main %}
