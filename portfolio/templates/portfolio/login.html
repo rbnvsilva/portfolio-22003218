@@ -3,15 +3,18 @@
 {% block main %}
     <h1 class="titulo">Login</h1>
     
-    {% if message %}
-      <p> {{ message }} </p>
-    {% endif %}
+    <div class="mensagem">
+        {% if message %}
+            <p> {{ message }} </p>
+        {% endif %}
+    </div>
 
     <form class="form-login" method="post">
         {% csrf_token %}
         <input type="text" name="username" placeholder="username">
         <br>
         <input type="password" name="password" placeholder="password">
+        <input class="button-login" type="submit" value="Login">
     </form>
-    <input class="button" type="submit" value="Login">
+
 {% endblock main %}

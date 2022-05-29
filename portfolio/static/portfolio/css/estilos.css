@@ -360,7 +360,7 @@ footer {
 
 .post {
   background-color: white;
-  height: 120px;
+  height: 140px;
   width: 350px;
   border-radius: 20px;
   box-shadow: 5px 5px 15px #888888;
@@ -380,6 +380,17 @@ footer {
   border-radius: 20px;
   width: 300px;
   left: 800px;
+}
+
+.form-post2 {
+  position: relative;
+  display: block;
+  font-size: 20px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 20px;
+  width: 420px;
+  left: 750px;
 }
 
 .button-quiz {
@@ -430,7 +441,7 @@ footer {
 	padding: 10px;
 	text-decoration: none;
 	text-shadow: 0px 1px 0px #ffffff;
-  left: 900px;
+  left: 20px;
   width: 100px;
 }
 
@@ -466,13 +477,49 @@ footer {
 }
 
 .button-post2:hover {
-	background:linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
-	background-color:#ccc2a6;
+	background: linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
+	background-color: #ccc2a6;
 }
 
 .button-post2:active {
-	position:relative;
-	top:1px;
+	position: relative;
+	top: 1px;
+}
+
+.button-edita {
+  color: #918B86;
+  text-decoration: none;
+}
+
+.button-login {
+  position: relative;
+  margin: 10px;
+	box-shadow: 0px 1px 0px 0px #1c1b18;
+	background: linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
+	background-color: #eae0c2;
+	border-radius: 15px;
+	border: 2px solid #333029;
+	display: inline-block;
+	cursor: pointer;
+	color: black;
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 10px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #ffffff;
+  left: 30px;
+  width: 100px;
+}
+
+.button-login:hover {
+	background: linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
+	background-color: #ccc2a6;
+}
+
+.button-login:active {
+	position: relative;
+	top: 1px;
 }
 
 .redes {
@@ -585,4 +632,13 @@ footer {
   border-radius: 20px;
   width: 200px;
   left: 850px;
+}
+
+.mensagem {
+  color: white;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  top: 150px;
 }

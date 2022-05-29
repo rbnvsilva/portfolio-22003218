@@ -104,7 +104,7 @@ def editar_post_view(request, post_id):
         'post_id': post_id
     }
 
-    return render(request, 'portfolio/edita_post.html', context)
+    return render(request, 'portfolio/editar_post.html', context)
 
 def apagar_post_view(request, post_id):
     post = Post.objects.get(id=post_id)
