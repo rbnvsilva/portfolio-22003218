@@ -1,0 +1,14 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+    <h1 class="titulo">Edita Post</h1>
+    <form action="{% url 'portfolio:edita_post' post_id %}" method="post">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <input type="submit" value="Editar">
+        <a href="{% url 'portfolio:blog' %}">Cancelar</a>
+        <a href="{% url 'portfolio:apaga_post' post_id %}">Apagar</a>
+    </form>
+{% endblock main %}

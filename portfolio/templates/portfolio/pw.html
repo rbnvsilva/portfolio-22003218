@@ -58,11 +58,12 @@
             </a>
             {% endfor %}
         </div>
-    <h1 class="titulo">Quizz</h1>
-    <form method="POST" enctype="multipart/form-data">
+    <h1 class="titulo">Quiz</h1>
+    <form class="form-quiz" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
 
         {{form.as_p}}
-        <input class="button" type="submit" value="Submit">
+        <input class="button-quiz" type="submit" value="Submit">
     </form>
+    
 {% endblock main %}

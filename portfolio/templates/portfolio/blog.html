@@ -7,12 +7,12 @@
 		<div class="post">     
 			<p class="tit-post">{{post.titulo}}</p>
 			<br>
-			<a href="{{post.link}}" target="_blank">Link para o GitHub</a>
+			<a class="link-pessoa" href="{{post.link}}" target="_blank">Link para o GitHub</a>
 			<br>
 			<br>
 			<p>{{post.autor}} em {{post.data}}</p>
 		</div>
 		{% endfor %}
 	</div>
-	<a class="button" href="{% url 'portfolio:criar_post' %}">Criar Post</a>
+	<a class="button-post" href="{% url 'portfolio:criar_post' %}">Criar Post</a>
 {% endblock main %}
