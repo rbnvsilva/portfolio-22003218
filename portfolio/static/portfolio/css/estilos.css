@@ -90,6 +90,16 @@ footer {
   justify-content: left;
 }
 
+.titulo3 {
+  display: flex;
+  font-size: 1.2em;
+  padding: 10px;
+  background-color: #917C67;
+  color: black;
+  align-items: flex-start;
+  justify-content: left;
+}
+
 .cadeiras {
   display: flex;
   flex-flow: row wrap;
@@ -641,4 +651,29 @@ footer {
   justify-content: center;
   align-self: center;
   top: 150px;
+}
+
+.meteorologia {
+  position: relative;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 5px 5px 15px #888888;
+  padding: 10px 20px;
+  margin: 10px;
+  width: 350px;
+  left: 750px;
+}
+
+.meteorologia h2 {
+  background-color: white;
+  color: black;
+}
+
+#cidade {
+  color: #ccc2a6;
+}
+
+#dia {
+  color: #ccc2a6;
+  font-style: italic;
 }
