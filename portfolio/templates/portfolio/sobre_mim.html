@@ -5,7 +5,7 @@
     <div class="cadeiras">
         {% for cadeira in cadeiras %}
         <div class="cadeira">     
-            <a class="tit-cadeira" href="https://www.ulusofona.pt/licenciaturas/engenharia-informatica/fundamentos-de-fisica/ULHT260-7336" target="_blank">
+            <a class="tit-cadeira" href={{cadeira.pagina_cadeira}} target="_blank">
                 <p>{{cadeira.nome}} ({{cadeira.ano_letivo}})</p>
             </a>
             <br>
