@@ -1,0 +1,12 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+    <h1 class="titulo">Edita Cadeira</h1>
+    <form class="form-cadeira" action="{% url 'portfolio:editar_cadeira' cadeira_id %}" method="post">
+        {% csrf_token %}
+        
+        {{form.as_p}}
+        <input class="button-edita2" type="submit" value="Editar">
+        <a class="button-cancela" href="{% url 'portfolio:sobre_mim' %}">Cancelar</a>
+    </form>
+{% endblock main %}

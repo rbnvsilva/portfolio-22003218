@@ -2,6 +2,7 @@
 
 {% block main %}
     <h1 class="titulo">Licenciatura</h1>
+    <a class="button-cadeiras" href="{% url 'portfolio:criar_cadeira' %}">Criar Cadeira</a>
     <div class="cadeiras">
         {% for cadeira in cadeiras %}
         <div class="cadeira">     
@@ -21,6 +22,11 @@
             <p>Professores: {% for professor in cadeira.professores.all %} 
                 <a class="link-pessoa" href="{{professor.link1}}" target="_blank">{{professor.nome}}</a> / <a class="link-pessoa" href="{{professor.link2}}" target="_blank">LinkedIn</a> <br>{% endfor %}
             </p>
+            <br>
+            <br>
+            {% if request.user.is_authenticated %}
+                <a class="button-edita" href="{% url 'portfolio:editar_cadeira' cadeira.id %}">Editar</a>              
+            {% endif %}
         </div>
         {% endfor %}
     </div>

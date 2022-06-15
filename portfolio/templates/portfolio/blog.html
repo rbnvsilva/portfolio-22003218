@@ -2,7 +2,7 @@
 
 {% block main %}
 	<h1 class="titulo">Posts</h1>
-	<a class="button-post" href="{% url 'portfolio:criar_post' %}">Criar Post</a>
+	<a class="button-posts" href="{% url 'portfolio:criar_post' %}">Criar Post</a>
 	<div class="posts">
 		{% for post in posts %}
 		<div class="post">     

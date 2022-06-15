@@ -2,12 +2,6 @@
 
 {% block main %}
     <h1 class="titulo">Login</h1>
-    
-    <div class="mensagem">
-        {% if message %}
-            <p> {{ message }} </p>
-        {% endif %}
-    </div>
 
     <form class="form-login" method="post">
         {% csrf_token %}

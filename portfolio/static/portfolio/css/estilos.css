@@ -101,6 +101,7 @@ footer {
 }
 
 .cadeiras {
+  position: relative;
   display: flex;
   flex-flow: row wrap;
   background-color: #917C67;
@@ -352,15 +353,6 @@ footer {
   color: white;
 }
 
-.form-quiz {
-  position: relative;
-  padding: 10px;
-  background-color: white;
-  border-radius: 20px;
-  width: 1100px;
-  left: 380px;
-}
-
 .posts {
   display: flex;
   flex-flow: row wrap;
@@ -380,177 +372,6 @@ footer {
 
 .tit-post {
   font-size: 1.3em;
-}
-
-.form-post {
-  position: relative;
-  font-size: 20px;
-  padding: 10px;
-  background-color: white;
-  border-radius: 20px;
-  width: 300px;
-  left: 800px;
-}
-
-.form-post2 {
-  position: relative;
-  display: block;
-  font-size: 20px;
-  padding: 10px;
-  background-color: white;
-  border-radius: 20px;
-  width: 420px;
-  left: 750px;
-}
-
-.button-quiz {
-  position: relative;
-  margin: 10px;
-	box-shadow: 0px 1px 0px 0px #1c1b18;
-	background: linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
-	background-color: #eae0c2;
-	border-radius: 15px;
-	border: 2px solid #333029;
-	display: inline-block;
-	cursor: pointer;
-	color: black;
-	font-family: Arial;
-	font-size: 14px;
-	font-weight: bold;
-	padding: 10px;
-	text-decoration: none;
-	text-shadow: 0px 1px 0px #ffffff;
-  left: 480px;
-  width: 100px;
-}
-
-.button-quiz:hover {
-	background:linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
-	background-color:#ccc2a6;
-}
-
-.button-quiz:active {
-	position:relative;
-	top:1px;
-}
-
-.button-post {
-  position: relative;
-  margin: 10px;
-	box-shadow: 0px 1px 0px 0px #1c1b18;
-	background: linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
-	background-color: #eae0c2;
-	border-radius: 15px;
-	border: 2px solid #333029;
-	display: inline-block;
-	cursor: pointer;
-	color: black;
-	font-family: Arial;
-	font-size: 14px;
-	font-weight: bold;
-	padding: 10px;
-	text-decoration: none;
-	text-shadow: 0px 1px 0px #ffffff;
-  left: 20px;
-  width: 100px;
-}
-
-.button-projeto {
-  position: relative;
-  margin: 10px;
-	box-shadow: 0px 1px 0px 0px #1c1b18;
-	background: linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
-	background-color: #eae0c2;
-	border-radius: 15px;
-	border: 2px solid #333029;
-	display: inline-block;
-	cursor: pointer;
-	color: black;
-	font-family: Arial;
-	font-size: 14px;
-	font-weight: bold;
-	padding: 10px;
-	text-decoration: none;
-	text-shadow: 0px 1px 0px #ffffff;
-  left: 20px;
-  width: 120px;
-}
-
-.button-post:hover {
-	background:linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
-	background-color:#ccc2a6;
-}
-
-.button-post:active {
-	position:relative;
-	top:1px;
-}
-
-.button-post2 {
-  position: relative;
-  margin: 10px;
-	box-shadow: 0px 1px 0px 0px #1c1b18;
-	background: linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
-	background-color: #eae0c2;
-	border-radius: 15px;
-	border: 2px solid #333029;
-	display: inline-block;
-	cursor: pointer;
-	color: black;
-	font-family: Arial;
-	font-size: 14px;
-	font-weight: bold;
-	padding: 10px;
-	text-decoration: none;
-	text-shadow: 0px 1px 0px #ffffff;
-  left: 70px;
-  width: 100px;
-}
-
-.button-post2:hover {
-	background: linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
-	background-color: #ccc2a6;
-}
-
-.button-post2:active {
-	position: relative;
-	top: 1px;
-}
-
-.button-edita {
-  color: #918B86;
-  text-decoration: none;
-}
-
-.button-login {
-  position: relative;
-  margin: 10px;
-	box-shadow: 0px 1px 0px 0px #1c1b18;
-	background: linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
-	background-color: #eae0c2;
-	border-radius: 15px;
-	border: 2px solid #333029;
-	display: inline-block;
-	cursor: pointer;
-	color: black;
-	font-family: Arial;
-	font-size: 14px;
-	font-weight: bold;
-	padding: 10px;
-	text-decoration: none;
-	text-shadow: 0px 1px 0px #ffffff;
-  left: 30px;
-  width: 100px;
-}
-
-.button-login:hover {
-	background: linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
-	background-color: #ccc2a6;
-}
-
-.button-login:active {
-	position: relative;
-	top: 1px;
 }
 
 .redes {
@@ -653,27 +474,6 @@ footer {
   color: #918B86;
 }
 
-.form-login {
-  position: relative;
-  display: block;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  background-color: white;
-  border-radius: 20px;
-  width: 200px;
-  left: 850px;
-}
-
-.mensagem {
-  color: white;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-self: center;
-  top: 150px;
-}
-
 .meteorologia {
   position: relative;
   background-color: white;
@@ -699,6 +499,18 @@ footer {
   font-style: italic;
 }
 
+.form-login {
+  position: relative;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+  border-radius: 20px;
+  width: 200px;
+  left: 850px;
+}
+
 .form-projeto {
   position: relative;
   background-color: white;
@@ -708,4 +520,290 @@ footer {
   margin: 10px;
   width: 350px;
   left: 750px;
+}
+
+.form-quiz {
+  position: relative;
+  padding: 10px;
+  background-color: white;
+  border-radius: 20px;
+  width: 1100px;
+  left: 380px;
+}
+
+.form-cadeira {
+  position: relative;
+  font-size: 20px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 20px;
+  width: 350px;
+  left: 800px;
+}
+
+.form-post {
+  position: relative;
+  font-size: 20px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 20px;
+  width: 300px;
+  left: 800px;
+}
+
+.button-login {
+  position: relative;
+  margin: 10px;
+	box-shadow: 0px 1px 0px 0px #1c1b18;
+	background: linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
+	background-color: #eae0c2;
+	border-radius: 15px;
+	border: 2px solid #333029;
+	display: inline-block;
+	cursor: pointer;
+	color: black;
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 10px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #ffffff;
+  left: 30px;
+  width: 100px;
+}
+
+.button-quiz {
+  position: relative;
+  margin: 10px;
+	box-shadow: 0px 1px 0px 0px #1c1b18;
+	background: linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
+	background-color: #eae0c2;
+	border-radius: 15px;
+	border: 2px solid #333029;
+	display: inline-block;
+	cursor: pointer;
+	color: black;
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 10px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #ffffff;
+  left: 480px;
+  width: 100px;
+}
+
+.button-cadeiras {
+  position: relative;
+  margin: 10px;
+	box-shadow: 0px 1px 0px 0px #1c1b18;
+	background: linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
+	background-color: #eae0c2;
+	border-radius: 15px;
+	border: 2px solid #333029;
+	display: inline-block;
+	cursor: pointer;
+	color: black;
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 10px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #ffffff;
+  left: 20px;
+  width: 120px;
+}
+
+.button-projetos {
+  position: relative;
+  margin: 10px;
+	box-shadow: 0px 1px 0px 0px #1c1b18;
+	background: linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
+	background-color: #eae0c2;
+	border-radius: 15px;
+	border: 2px solid #333029;
+	display: inline-block;
+	cursor: pointer;
+	color: black;
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 10px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #ffffff;
+  left: 20px;
+  width: 120px;
+}
+
+.button-posts {
+  position: relative;
+  margin: 10px;
+	box-shadow: 0px 1px 0px 0px #1c1b18;
+	background: linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
+	background-color: #eae0c2;
+	border-radius: 15px;
+	border: 2px solid #333029;
+	display: inline-block;
+	cursor: pointer;
+	color: black;
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 10px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #ffffff;
+  left: 20px;
+  width: 100px;
+}
+
+.button-projeto-cria {
+  position: relative;
+  margin: 10px;
+	box-shadow: 0px 1px 0px 0px #1c1b18;
+	background: linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
+	background-color: #eae0c2;
+	border-radius: 15px;
+	border: 2px solid #333029;
+	display: inline-block;
+	cursor: pointer;
+	color: black;
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 10px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #ffffff;
+  left: 75px;
+  width: 120px;
+}
+
+.button-cadeira-cria {
+  position: relative;
+  margin: 10px;
+	box-shadow: 0px 1px 0px 0px #1c1b18;
+	background: linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
+	background-color: #eae0c2;
+	border-radius: 15px;
+	border: 2px solid #333029;
+	display: inline-block;
+	cursor: pointer;
+	color: black;
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 10px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #ffffff;
+  left: 75px;
+  width: 120px;
+}
+
+.button-post-cria {
+  position: relative;
+  margin: 10px;
+	box-shadow: 0px 1px 0px 0px #1c1b18;
+	background: linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
+	background-color: #eae0c2;
+	border-radius: 15px;
+	border: 2px solid #333029;
+	display: inline-block;
+	cursor: pointer;
+	color: black;
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 10px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #ffffff;
+  left: 65px;
+  width: 120px;
+}
+
+.button-edita2 {
+  position: relative;
+  margin: 10px;
+	box-shadow: 0px 1px 0px 0px #1c1b18;
+	background: linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
+	background-color: #eae0c2;
+	border-radius: 15px;
+	border: 2px solid #333029;
+	display: inline-block;
+	cursor: pointer;
+	color: black;
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 10px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #ffffff;
+  left: 20px;
+  width: 100px;
+}
+
+.button-cancela {
+  position: relative;
+  margin: 10px;
+	box-shadow: 0px 1px 0px 0px #1c1b18;
+	background: linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
+	background-color: #eae0c2;
+	border-radius: 15px;
+	border: 2px solid #333029;
+	display: inline-block;
+	cursor: pointer;
+	color: black;
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 10px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #ffffff;
+  left: 20px;
+  width: 100px;
+}
+
+.button-post {
+  position: relative;
+  margin: 10px;
+	box-shadow: 0px 1px 0px 0px #1c1b18;
+	background: linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
+	background-color: #eae0c2;
+	border-radius: 15px;
+	border: 2px solid #333029;
+	display: inline-block;
+	cursor: pointer;
+	color: black;
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 10px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #ffffff;
+  left: 70px;
+  width: 100px;
+}
+
+.button-cadeira {
+  position: relative;
+  margin: 10px;
+	box-shadow: 0px 1px 0px 0px #1c1b18;
+	background: linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
+	background-color: #eae0c2;
+	border-radius: 15px;
+	border: 2px solid #333029;
+	display: inline-block;
+	cursor: pointer;
+	color: black;
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 10px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #ffffff;
+  left: 100px;
+  width: 100px;
+}
+
+.button-edita {
+  color: #918B86;
+  text-decoration: none;
 }

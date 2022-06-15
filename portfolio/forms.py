@@ -1,13 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Post, Quiz, Projeto
-
-class MultiVField(forms.fields.MultiValueField):
-
-    def __init__(self, *args, **kwargs):
-        list_fields = [forms.fields.CharField(max_length=31),
-                       forms.fields.CharField(max_length=31)]
-        super(MultiVField, self).__init__(list_fields, *args, **kwargs)
+from .models import Post, Quiz, Projeto, Cadeira
 
 class PostForm(ModelForm):
     class Meta:
@@ -32,3 +25,8 @@ class ProjetoForm(ModelForm):
     class Meta:
         model = Projeto
         fields = '__all__'
+
+class CadeiraForm(ModelForm):
+    class Meta:
+        model = Cadeira
+        fields = '__all__'        

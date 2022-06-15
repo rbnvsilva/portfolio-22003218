@@ -2,7 +2,7 @@
 
 {% block main %}
 <h1 class="titulo">Projetos/TFC</h1>
-<a class="button-projeto" href="{% url 'portfolio:criar_projeto' %}">Criar Projeto</a>
+<a class="button-projetos" href="{% url 'portfolio:criar_projeto' %}">Criar Projeto</a>
 <div class="projetos">
     {% for projeto in projetos %}
     <div class="projeto">     

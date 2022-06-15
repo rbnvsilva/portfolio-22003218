@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .models import Linguagem, Cadeira, Projeto, Escola, Interesse, Laboratorio, Post, Rede, Quiz
-from .forms import PostForm, QuizForm, ProjetoForm
+from .forms import PostForm, QuizForm, ProjetoForm, CadeiraForm
 
 def home_view(request):
 	return render(request, 'portfolio/home.html')
@@ -17,6 +17,37 @@ def sobre_mim_view(request):
     }
 
 	return render(request, 'portfolio/sobre_mim.html', context)
+
+def criar_cadeira_view(request):
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect(reverse_lazy('portfolio:login'))
+
+    form = CadeiraForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect(reverse_lazy('portfolio:sobre_mim'))
+
+    context = {
+        'form': form,
+    }
+
+    return render(request, 'portfolio/criar_cadeira.html', context)
+
+@login_required
+def editar_cadeira_view(request, cadeira_id):
+    cadeira = Cadeira.objects.get(id=cadeira_id)
+    form = CadeiraForm(request.POST or None, instance=cadeira)
+
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect(reverse_lazy('portfolio:sobre_mim'))
+
+    context = {
+        'form': form, 
+        'cadeira_id': cadeira_id
+    }
+
+    return render(request, 'portfolio/editar_cadeira.html', context)
 
 def projetos_view(request):
     form = ProjetoForm(request.POST or None)
@@ -45,6 +76,22 @@ def criar_projeto_view(request):
     }
 
     return render(request, 'portfolio/criar_projeto.html', context)
+
+@login_required
+def editar_projeto_view(request, projeto_id):
+    projeto = Projeto.objects.get(id=projeto_id)
+    form = ProjetoForm(request.POST or None, instance=projeto)
+
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect(reverse_lazy('portfolio:projetos'))
+
+    context = {
+        'form': form, 
+        'projeto_id': projeto_id
+    }
+
+    return render(request, 'portfolio/editar_projeto.html', context)
 
 def pw_view(request):
     form = QuizForm(request.POST)
@@ -82,6 +129,22 @@ def criar_post_view(request):
 
     return render(request, 'portfolio/criar_post.html', context)
 
+@login_required
+def editar_post_view(request, post_id):
+    post = Post.objects.get(id=post_id)
+    form = PostForm(request.POST or None, instance=post)
+
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect(reverse_lazy('portfolio:blog'))
+
+    context = {
+        'form': form, 
+        'post_id': post_id
+    }
+
+    return render(request, 'portfolio/editar_post.html', context)
+
 def sobre_website_view(request):
 	return render(request, 'portfolio/sobre_website.html')
 
@@ -110,49 +173,3 @@ def logout_view(request):
     logout(request)
 
     return render(request, 'portfolio/home.html')
-
-@login_required
-def editar_post_view(request, post_id):
-    post = Post.objects.get(id=post_id)
-    form = PostForm(request.POST or None, instance=post)
-
-    if form.is_valid():
-        form.save()
-        return HttpResponseRedirect(reverse_lazy('portfolio:blog'))
-
-    context = {
-        'form': form, 
-        'post_id': post_id
-    }
-
-    return render(request, 'portfolio/editar_post.html', context)
-
-@login_required
-def apagar_post_view(request, post_id):
-    post = Post.objects.get(id=post_id)
-    post.delete()
-
-    return HttpResponseRedirect(reverse_lazy('portfolio:blog'))
-
-@login_required
-def editar_projeto_view(request, projeto_id):
-    projeto = Projeto.objects.get(id=projeto_id)
-    form = ProjetoForm(request.POST or None, instance=projeto)
-
-    if form.is_valid():
-        form.save()
-        return HttpResponseRedirect(reverse_lazy('portfolio:projetos'))
-
-    context = {
-        'form': form, 
-        'projeto_id': projeto_id
-    }
-
-    return render(request, 'portfolio/editar_projeto.html', context)
-
-@login_required
-def apagar_projeto_view(request, projeto_id):
-    projeto = Projeto.objects.get(id=projeto_id)
-    projeto.delete()
-
-    return HttpResponseRedirect(reverse_lazy('portfolio:projetos'))

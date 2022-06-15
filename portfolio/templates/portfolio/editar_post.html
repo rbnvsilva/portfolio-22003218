@@ -2,12 +2,11 @@
 
 {% block main %}
     <h1 class="titulo">Edita Post</h1>
-    <form class="form-post2" action="{% url 'portfolio:editar_post' post_id %}" method="post">
+    <form class="form-post" action="{% url 'portfolio:editar_post' post_id %}" method="post">
         {% csrf_token %}
         
         {{form.as_p}}
-        <input class="button-post" type="submit" value="Editar">
-        <a class="button-post" href="{% url 'portfolio:blog' %}">Cancelar</a>
-        <a class="button-post" href="{% url 'portfolio:apagar_post' post_id %}">Apagar</a>
+        <input class="button-edita2" type="submit" value="Editar">
+        <a class="button-cancela" href="{% url 'portfolio:blog' %}">Cancelar</a>
     </form>
 {% endblock main %}
