@@ -94,4 +94,13 @@ class Rede(models.Model):
     link = models.CharField(max_length=300)
     
     def __str__(self):
-        return self.descricao       
+        return self.descricao
+
+class Noticia(models.Model):
+    titulo = models.CharField(max_length=200)
+    descricao = models.TextField(max_length=500)
+    image = models.FileField(upload_to="uploads/")
+    link = models.CharField(max_length=300)
+
+    def __str__(self):
+        return self.titulo    
