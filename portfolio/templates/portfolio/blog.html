@@ -2,8 +2,6 @@
 
 {% block main %}
 	<h1 class="titulo">Posts</h1>
-	<a class="button-post" href="{% url 'portfolio:login' %}">Login</a>
-    <a class="button-post" href="{% url 'portfolio:logout' %}">Logout</a>
 	<a class="button-post" href="{% url 'portfolio:criar_post' %}">Criar Post</a>
 	<div class="posts">
 		{% for post in posts %}

@@ -1,0 +1,11 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+    <h1 class="titulo">Cria um projeto</h1>
+    <form class="form-projeto" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {{form.as_p}}
+        <input class="button-post2" type="submit" value="Submit">
+    </form>
+{% endblock main %}

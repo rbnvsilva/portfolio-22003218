@@ -13,6 +13,7 @@
     <header>
       <div>Ruben Silva</div>
       <nav>
+        {% if user.is_authenticated %}
         <a href="{% url 'portfolio:home' %}">Home</a> 
         <a href="{% url 'portfolio:sobre_mim' %}">Sobre mim</a> 
         <a href="{% url 'portfolio:projetos' %}">Projetos</a>  
@@ -20,6 +21,17 @@
         <a href="{% url 'portfolio:blog' %}">Blog</a>
         <a href="{% url 'portfolio:sobre_website' %}">Sobre este website</a>
         <a href="{% url 'portfolio:contacto' %}">Contacto</a>
+        <a href="{% url 'portfolio:logout' %}">Logout</a>
+        {% else %}
+        <a href="{% url 'portfolio:home' %}">Home</a> 
+        <a href="{% url 'portfolio:sobre_mim' %}">Sobre mim</a> 
+        <a href="{% url 'portfolio:projetos' %}">Projetos</a>  
+        <a href="{% url 'portfolio:pw' %}">Programacao Web</a>   
+        <a href="{% url 'portfolio:blog' %}">Blog</a>
+        <a href="{% url 'portfolio:sobre_website' %}">Sobre este website</a>
+        <a href="{% url 'portfolio:contacto' %}">Contacto</a>
+        <a href="{% url 'portfolio:login' %}">Login</a>
+        {% endif %}
       </nav>
     </header>
     
@@ -37,7 +49,7 @@
         if (year < 1000) {
           year += 1900;
         }
-        var currentTime = new Date();
+        var currentTime = new Date();        
         var h = currentTime.getHours();
         var m = currentTime.getMinutes();
         var s = currentTime.getSeconds();

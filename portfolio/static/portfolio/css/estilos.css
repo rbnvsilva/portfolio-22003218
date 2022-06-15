@@ -455,6 +455,27 @@ footer {
   width: 100px;
 }
 
+.button-projeto {
+  position: relative;
+  margin: 10px;
+	box-shadow: 0px 1px 0px 0px #1c1b18;
+	background: linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
+	background-color: #eae0c2;
+	border-radius: 15px;
+	border: 2px solid #333029;
+	display: inline-block;
+	cursor: pointer;
+	color: black;
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 10px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #ffffff;
+  left: 20px;
+  width: 120px;
+}
+
 .button-post:hover {
 	background:linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
 	background-color:#ccc2a6;
@@ -619,7 +640,7 @@ footer {
 
 .projeto {
   background-color: white;
-  height: 410px;
+  height: 450px;
   width: 350px;
   border-radius: 20px;
   box-shadow: 5px 5px 15px #888888;
@@ -676,4 +697,15 @@ footer {
 #dia {
   color: #ccc2a6;
   font-style: italic;
+}
+
+.form-projeto {
+  position: relative;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 5px 5px 15px #888888;
+  padding: 10px 20px;
+  margin: 10px;
+  width: 350px;
+  left: 750px;
 }
