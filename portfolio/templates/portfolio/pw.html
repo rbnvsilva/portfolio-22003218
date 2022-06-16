@@ -73,25 +73,27 @@
     </div> 
     <h1 class="titulo">Quiz</h1>
     <form class="form-quiz" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
         <p style="text-align: center;">Nome do jogador</p>
-        <input class="pergunta" type="text" id="nome" name="nome" size="50">
+        <input class="center" type="text" id="nome" name="nome" size="50">
         <p style="text-align: center;">Qual o significado de HTML?</p>
-        <input class="pergunta" type="text" id="p1" name="p1" size="50">
+        <input class="center" type="text" id="p1" name="p1" size="50">
         <br>
         <p style="text-align: center;">Django é uma framework de que linguagem?</p>
-        <input class="pergunta" type="text" id="p2" name="p2" size="50">
+        <input class="center" type="text" id="p2" name="p2" size="50">
         <br>
         <p style="text-align: center;">Quantos tipos de display existem em CSS?</p>
-        <input class="pergunta" type="text" id="p3" name="p3" size="50">
+        <input class="center" type="text" id="p3" name="p3" size="50">
         <br>
         <p style="text-align: center;">Que tag devo usar para meter o texto a negrito?</p>
-        <input class="pergunta" type="text" id="p4" name="p4" size="50">
+        <input class="center" type="text" id="p4" name="p4" size="50">
         <br>
         <p style="text-align: center;">Qual o nome do ficheiro .py onde <br> se regista os models para aparecer na pagina admin?</p>
-        <input class="pergunta" type="text" id="p5" name="p5" size="50">
+        <input class="center" type="text" id="p5" name="p5" size="50">
         <input class="button-quiz" type="submit" value="Submit"> 
     </form>
-    <p><img src="data:image/png;base64,{{ data }}" alt=""></p>
+    <br><br>
+    <p class="center"><img src="data:image/png;base64,{{ data }}" alt=""></p>
     <h1 class="titulo">Meteorologia</h1>
     <div class="meteorologia">
         <h2 id="cidade" class="titulo2">Cidade: Lisboa</h2>

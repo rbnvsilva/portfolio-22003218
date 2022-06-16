@@ -16,7 +16,7 @@ def grafico():
     nomes = [quiz.nome for quiz in quizzes]
     pontuacoes = [quiz.pontuacao for quiz in quizzes]
     
-    plt.barh(pontuacoes, nomes)
+    plt.barh(nomes, pontuacoes)
     plt.xlabel("Pontuacoes")
     plt.ylabel("Nomes")
     plt.autoscale()
@@ -37,13 +37,13 @@ def pontuacao(request):
     pontuacao = 0
     if (request.POST['p1'].lower() == "Hypertext Markup Language".lower()):
         pontuacao += 1
-    elif(request.POST['p2'].lower() == "Python".lower()):
+    if(request.POST['p2'].lower() == "Python".lower()):
         pontuacao += 1
-    elif(request.POST['p3'].lower() == "4".lower()):
+    if(request.POST['p3'].lower() == "4".lower()):
         pontuacao += 1
-    elif(request.POST['p4'].lower() == "<b>".lower()):
+    if(request.POST['p4'].lower() == "<b>".lower()):
         pontuacao += 1
-    elif(request.POST['p5'].lower() == "admin.py".lower()):
+    if(request.POST['p5'].lower() == "admin.py".lower()):
         pontuacao += 1
     
     return pontuacao
