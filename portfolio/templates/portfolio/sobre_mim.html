@@ -56,4 +56,44 @@
         </div>
         {% endfor %}
     </div>
+    <script>
+        function random(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min)
+        }
+
+        let random_num = random(1, 300);
+        let link = `https://free-nba.p.rapidapi.com/players/${random_num}`
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': '89f0438fa9mshbd24f5f62746f32p148fe8jsn6c31bc1debad',
+                'X-RapidAPI-Host': 'free-nba.p.rapidapi.com'
+            }
+        };
+
+        fetch(link, options)
+            .then(response => response.json())
+            .then(data => {
+                let p_nome = data.first_name;
+                let u_nome = data.last_name;
+                let posicao = data.position;
+                let equipa = data.team.full_name;
+                document.querySelector('#nome').append(p_nome);
+                document.querySelector('#nome').append(` ${u_nome}`);
+                document.querySelector('#posicao').append(posicao);
+                document.querySelector('#equipa').append(equipa);
+            });
+    </script>
+    
+    <h1 class="titulo">API NBA</h1>
+    
+    <div class="nba">
+        <p>Visto que tambem gosto de ver NBA, esta API vai buscar as informacoes de um jogador</p>
+        <br>
+        <p id="nome">Nome: </p>
+        <p id="posicao">Posicao: </p>
+        <p id="equipa">Equipa: </p>
+    </div>
+    <br>
+    <br>
 {% endblock main %}
