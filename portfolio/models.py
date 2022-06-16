@@ -79,7 +79,7 @@ class Post(models.Model):
 
 class Quiz(models.Model):
     nome = models.CharField(max_length=60)
-    pontuacao = models.IntegerField
+    pontuacao = models.IntegerField()
     
     def __str__(self):
         return self.nome
