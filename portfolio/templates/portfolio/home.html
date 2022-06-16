@@ -1,26 +1,65 @@
 {% extends 'portfolio/layout.html' %}
 
 {% block main %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json')
+            .then(response => response.json())
+            .then(data => {
+                let temp_min = data.data[0].tMin
+                let temp_max = data.data[0].tMax
+                document.querySelector('#temp_min').append(temp_min);
+                document.querySelector('#temp_max').append(temp_max);
+                temp_min = data.data[1].tMin
+                temp_max = data.data[1].tMax
+                document.querySelector('#temp_min2').append(temp_min);
+                document.querySelector('#temp_max2').append(temp_max);
+                temp_min = data.data[2].tMin
+                temp_max = data.data[2].tMax
+                document.querySelector('#temp_min3').append(temp_min);
+                document.querySelector('#temp_max3').append(temp_max);
+            });
+        });
+    </script>
     <div class="p1">
         {% load static %}
         <img src="{% static 'portfolio/images/p1.jpg' %}">
     </div>
     <div class="sobre-curso">
         <p>
-            Bem-vindos ao meu Portfolio!
-            <br>
-            <br>
-            Chamo-me Ruben Silva, tenho 21 anos e estou no 2 Ano da Licenciatura em Engenharia Informatica na Universidade Lusofona Humanidades e Tecnologias.
-            <br>
-            <br>
-            Escolhi este curso porque sempre gostei de tecnologias e tive contacto com as mesmas muito cedo. Tive o meu primeiro computador com 6 anos e sempre gostei de ficar na internet mesmo quando nao sabia o que isso era. Ao falar de coisas mais atuais, comecei a programar em Python quando tinha mais ou menos 16/17 anos o que ajudou na escolha do curso.
-            <br>
-            <br>
-            No que toca ao curso em si, tive cadeiras que gostei mais que outras, nomeadamente tudo o que tenha a ver com programacao, mas sei que as outras tambem foram importantes para o meu futuro.
-            <br>
-            <br>
-            Quando acabar o curso espero ter capacidade para conseguir trabalho na area que me interessar no momento!
+        Bem-vindos ao meu Portfolio!
+        <br>
+        <br>
+        Chamo-me Ruben Silva, tenho 21 anos e estou no 2 Ano da Licenciatura em Engenharia Informatica na Universidade Lusofona Humanidades e Tecnologias.
+        <br>
+        <br>
+        Escolhi este curso porque sempre gostei de tecnologias e tive contacto com as mesmas muito cedo. Tive o meu primeiro computador com 6 anos e sempre gostei de ficar na internet mesmo quando nao sabia o que isso era. Ao falar de coisas mais atuais, comecei a programar em Python quando tinha mais ou menos 16/17 anos o que ajudou na escolha do curso.
+        <br>
+        <br>
+        No que toca ao curso em si, tive cadeiras que gostei mais que outras, nomeadamente tudo o que tenha a ver com programacao, mas sei que as outras tambem foram importantes para o meu futuro.
+        <br>
+        <br>
+        Quando acabar o curso espero ter capacidade para conseguir trabalho na area que me interessar no momento!
         </p>
+        <br>
+        <hr>
+        <br>
+        <h2 id="cidade">API meteorologia (Lisboa)</h2>
+        <br>
+        <h2 id="dia">Hoje</h2>
+        <br>
+        <h4 id="temp_min">Temperatura minima: </h4>
+        <h4 id="temp_max">Temperatura maxima: </h4>
+        <br>
+        <h2 id="dia">Amanha</h2>
+        <br>
+        <h4 id="temp_min2">Temperatura minima: </h4>
+        <h4 id="temp_max2">Temperatura maxima: </h4>
+        <br>
+        <h2 id="dia">Depois de amanha</h2>
+        <br>
+        <h4 id="temp_min3">Temperatura minima: </h2>
+        <h4 id="temp_max3">Temperatura maxima: </h2>
     </div>
     <div class="p2">
         {% load static %}

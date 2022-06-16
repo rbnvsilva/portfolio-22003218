@@ -76,6 +76,7 @@
         {% csrf_token %}
         <p style="text-align: center;">Nome do jogador</p>
         <input class="center" type="text" id="nome" name="nome" size="50">
+        <br>
         <p style="text-align: center;">Qual o significado de HTML?</p>
         <input class="center" type="text" id="p1" name="p1" size="50">
         <br>
@@ -94,37 +95,4 @@
     </form>
     <br><br>
     <p class="center"><img src="data:image/png;base64,{{ data }}" alt=""></p>
-    <h1 class="titulo">Meteorologia</h1>
-    <div class="meteorologia">
-        <h2 id="cidade" class="titulo2">Cidade: Lisboa</h2>
-        <h2 id="dia" class="titulo2">Hoje</h2>
-        <h2 id="temp_min" class="titulo3">Temperatura minima: </h2>
-        <h2 id="temp_max" class="titulo3">Temperatura maxima: </h2>
-        <h2 id="dia" class="titulo2">Amanha</h2>
-        <h2 id="temp_min2" class="titulo3">Temperatura minima: </h2>
-        <h2 id="temp_max2" class="titulo3">Temperatura maxima: </h2>
-        <h2 id="dia" class="titulo2">Depois de amanha</h2>
-        <h2 id="temp_min3" class="titulo3">Temperatura minima: </h2>
-        <h2 id="temp_max3" class="titulo3">Temperatura maxima: </h2>
-    </div>
-    <script>
-            document.addEventListener('DOMContentLoaded', function() {
-            fetch('https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json')
-            .then(response => response.json())
-            .then(data => {
-                let temp_min = data.data[0].tMin
-                let temp_max = data.data[0].tMax
-                document.querySelector('#temp_min').append(temp_min);
-                document.querySelector('#temp_max').append(temp_max);
-                temp_min = data.data[1].tMin
-                temp_max = data.data[1].tMax
-                document.querySelector('#temp_min2').append(temp_min);
-                document.querySelector('#temp_max2').append(temp_max);
-                temp_min = data.data[2].tMin
-                temp_max = data.data[2].tMax
-                document.querySelector('#temp_min3').append(temp_min);
-                document.querySelector('#temp_max3').append(temp_max);
-            });
-        });
-    </script>
 {% endblock main %}
