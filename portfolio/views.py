@@ -39,9 +39,11 @@ def pontuacao(request):
         pontuacao += 1
     elif(request.POST['p2'].lower() == "Python".lower()):
         pontuacao += 1
-    elif(request.POST['p3'].lower() == "<b>".lower()):
+    elif(request.POST['p3'].lower() == "4".lower()):
         pontuacao += 1
-    elif(request.POST['p4'].lower() == "admin.py".lower()):
+    elif(request.POST['p4'].lower() == "<b>".lower()):
+        pontuacao += 1
+    elif(request.POST['p5'].lower() == "admin.py".lower()):
         pontuacao += 1
     
     return pontuacao
