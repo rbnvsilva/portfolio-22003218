@@ -78,15 +78,11 @@ class Post(models.Model):
         return self.titulo
 
 class Quiz(models.Model):
-    nome_pessoa = models.CharField(max_length=60)
-    pergunta1 = models.CharField(max_length=60)
-    pergunta2 = models.CharField(max_length=60)
-    pergunta3 = models.CharField(max_length=60)
-    pergunta4 = models.CharField(max_length=60)
-    pergunta5 = models.CharField(max_length=60)
+    nome = models.CharField(max_length=60)
+    pontuacao = models.IntegerField
     
     def __str__(self):
-        return self.nome_pessoa
+        return self.nome
 
 class Rede(models.Model):
     descricao = models.TextField(max_length=500)

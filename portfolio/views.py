@@ -6,6 +6,41 @@ from django.contrib.auth.decorators import login_required
 from .models import Linguagem, Cadeira, Projeto, Escola, Interesse, Laboratorio, Post, Rede, Quiz, Noticia
 from .forms import PostForm, QuizForm, ProjetoForm, CadeiraForm
 
+def grafico():
+    quizzes = Quiz.objects.all().order_by('pontuacao')
+    nomes = [quiz.nome for quiz in quizzes]
+    pontuacoes = [quiz.pontuacao for quiz in quizzes]
+    
+    plt.barh(pontuacoes, nomes)
+    plt.xlabel("Pontuacoes")
+    plt.ylabel("Nomes")
+    plt.autoscale()
+
+    fig = plt.gcf()
+    plt.close()
+
+    buf = io.BytesIO()
+    fig.savefig(buf, format='png')
+
+    buf.seek(0)
+    string = base64.b64encode(buf.read())
+    uri = urllib.parse.quote(string)
+
+    return uri
+
+def pontuacao(request):
+    pontuacao = 0
+    if (request.POST['p1'].lower() == "Hypertext Markup Language".lower()):
+        pontuacao += 1
+    elif(request.POST['p2'].lower() == "Python".lower()):
+        pontuacao += 1
+    elif(request.POST['p3'].lower() == "<b>".lower()):
+        pontuacao += 1
+    elif(request.POST['p4'].lower() == "admin.py".lower()):
+        pontuacao += 1
+    
+    return pontuacao
+
 def home_view(request):
 	return render(request, 'portfolio/home.html')
 
@@ -94,16 +129,17 @@ def editar_projeto_view(request, projeto_id):
     return render(request, 'portfolio/editar_projeto.html', context)
 
 def pw_view(request):
-    form = QuizForm(request.POST)
-    if form.is_valid():
-        form.save()
-        return HttpResponseRedirect(request.path_info)
+    if request.method == 'POST':
+        n = request.POST['nome']
+        p = pontuacao(request)
+        r = Quiz(nome=n, pontuacao=p)
+        r.save()
 
     context = {
         'linguagens': Linguagem.objects.all(),
         'laboratorios': Laboratorio.objects.all(),
         'noticias': Noticia.objects.all(),
-        'form': form,
+        'data': grafico()
     }
 
     return render(request, 'portfolio/pw.html', context)
