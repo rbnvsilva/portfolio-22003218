@@ -60,8 +60,16 @@
         </div>
     <h1 class="titulo">Noticias</h1>
     <div class="noticias">
-        
-    </div>
+        {% for noticia in noticias %}
+            <div class="noticia">     
+                <p class="tit-noticia"> {{noticia.titulo}}</p>
+                <br>
+                <p>{{noticia.descricao}}</p>
+                <br>
+                <p><img class="img-noticia" src="{{noticia.image.url}}"></p>
+            </div>
+        {% endfor %}
+    </div> 
     <h1 class="titulo">Quiz</h1>
     <form class="form-quiz" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
