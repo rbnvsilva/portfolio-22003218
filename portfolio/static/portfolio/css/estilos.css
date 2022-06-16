@@ -353,6 +353,24 @@ footer {
   color: white;
 }
 
+.noticias {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  background-color: #917C67;
+  padding: 20px;
+}
+
+.noticia {
+  background-color: white;
+  height: 250px;
+  width: 350px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 15px #888888;
+  padding: 10px 20px;
+  margin: 10px;
+}
+
 .posts {
   display: flex;
   flex-flow: row wrap;

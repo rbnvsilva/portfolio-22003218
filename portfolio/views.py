@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .models import Linguagem, Cadeira, Projeto, Escola, Interesse, Laboratorio, Post, Rede, Quiz
+from .models import Linguagem, Cadeira, Projeto, Escola, Interesse, Laboratorio, Post, Rede, Quiz, Noticia
 from .forms import PostForm, QuizForm, ProjetoForm, CadeiraForm
 
 def home_view(request):
@@ -102,6 +102,7 @@ def pw_view(request):
     context = {
         'linguagens': Linguagem.objects.all(),
         'laboratorios': Laboratorio.objects.all(),
+        'noticias': Noticia.objects.all(),
         'form': form,
     }
 
