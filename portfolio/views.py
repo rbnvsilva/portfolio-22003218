@@ -5,6 +5,11 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .models import Linguagem, Cadeira, Projeto, Escola, Interesse, Laboratorio, Post, Rede, Quiz, Noticia
 from .forms import PostForm, QuizForm, ProjetoForm, CadeiraForm
+from matplotlib import pyplot as plt
+import io
+import urllib, base64
+import matplotlib
+matplotlib.use('Agg')
 
 def grafico():
     quizzes = Quiz.objects.all().order_by('pontuacao')
