@@ -375,6 +375,21 @@ footer {
   padding-left: 50px;
 }
 
+.noticia a:active {
+  color: #918B86;
+  text-decoration: none;
+}
+
+.noticia a:hover {
+  color: #918B86;
+  text-decoration: none;
+}
+
+.noticia a:visited {
+  color: #918B86;
+  text-decoration: none;
+}
+
 .posts {
   display: flex;
   flex-flow: row wrap;
