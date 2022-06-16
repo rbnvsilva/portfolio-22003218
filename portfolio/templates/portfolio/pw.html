@@ -61,8 +61,8 @@
     <h1 class="titulo">Noticias</h1>
     <div class="noticias">
         {% for noticia in noticias %}
-            <div class="noticia">     
-                <p class="tit-noticia"> {{noticia.titulo}}</p>
+            <div class="noticia">
+                <b><a href="{{noticia.link}}">{{noticia.titulo}}</a></b>
                 <br>
                 <p>{{noticia.descricao}}</p>
                 <br>
