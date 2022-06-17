@@ -473,7 +473,6 @@ footer {
 }
 
 .sobre-site {
-  height: 30vh;
   background-color: white;
   padding: 20px;
   font-size: 1.2rem;
@@ -483,10 +482,20 @@ footer {
 }
 
 .diagrama {
-  position: absolute;
-  top: 250px;
-  left: 900px;
-  color: white;
+  position: relative;
+  background-color: red;
+  left: 800px;
+  bottom: 700px;
+  width: 0px;
+  height: 0px;
+  z-index: -1;
+}
+
+.padrao {
+  background-color: white;
+  padding: 20px;
+  font-size: 1.2rem;
+  border-radius: 20px;
 }
 
 .projetos {
@@ -580,6 +589,17 @@ footer {
   margin: 10px;
   width: 350px;
   left: 750px;
+}
+
+.form-tfc {
+  position: relative;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 5px 5px 15px #888888;
+  padding: 10px 20px;
+  margin: 10px;
+  width: 350px;
+  left: 775px;
 }
 
 .form-quiz {
@@ -759,6 +779,27 @@ footer {
 	text-shadow: 0px 1px 0px #ffffff;
   left: 75px;
   width: 120px;
+}
+
+.button-tfc-cria {
+  position: relative;
+  margin: 10px;
+	box-shadow: 0px 1px 0px 0px #1c1b18;
+	background: linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
+	background-color: #eae0c2;
+	border-radius: 15px;
+	border: 2px solid #333029;
+	display: inline-block;
+	cursor: pointer;
+	color: black;
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 10px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #ffffff;
+  left: 75px;
+  width: 130px;
 }
 
 .button-cadeira-cria {

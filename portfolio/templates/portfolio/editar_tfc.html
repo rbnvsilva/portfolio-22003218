@@ -1,0 +1,12 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+    <h1 class="titulo">Edita TFC</h1>
+    <form class="form-tfc" action="{% url 'portfolio:editar_tfc' tfc_id %}" method="post">
+        {% csrf_token %}
+        
+        {{form.as_p}}
+        <input class="button-edita2" type="submit" value="Editar">
+        <a class="button-cancela" href="{% url 'portfolio:projetos' %}">Cancelar</a>
+    </form>
+{% endblock main %}
