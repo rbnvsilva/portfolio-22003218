@@ -33,8 +33,12 @@
         <br>
         <p class="texto-tfc">{{tfc.resumo}}</p>
         <br>
-        <p>Autores: {% for autor in tfc.autores.all %} 
-            <a class="link-pessoa" href="{{autor.link1}}" target="_blank">{{autor.nome}}</a> / <a class="link-pessoa" href="{{autor.link2}}" target="_blank">Github</a> <br>{% endfor %}
+        <p>
+            Autores: 
+            {% for autor in tfc.autores.all %}
+            {{autor.nome}}
+            <br>
+            {% endfor %}
         </p>
         <br>
         <p>Orientadores: {% for orientador in tfc.orientadores.all %} 
