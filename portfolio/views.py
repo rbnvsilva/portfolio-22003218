@@ -3,8 +3,8 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .models import Linguagem, Cadeira, Projeto, Escola, Interesse, Laboratorio, Post, Rede, Quiz, Noticia
-from .forms import PostForm, QuizForm, ProjetoForm, CadeiraForm
+from .models import Linguagem, Cadeira, Projeto, Escola, Interesse, Laboratorio, Post, Rede, Quiz, Noticia, Tfc
+from .forms import PostForm, ProjetoForm, CadeiraForm, TfcForm
 from matplotlib import pyplot as plt
 import io
 import urllib, base64
@@ -99,6 +99,7 @@ def projetos_view(request):
 
     context = {
         'projetos': Projeto.objects.all(),
+        'tfcs': Tfc.objects.all(),
         'form': form,
     }
 
@@ -134,6 +135,37 @@ def editar_projeto_view(request, projeto_id):
     }
 
     return render(request, 'portfolio/editar_projeto.html', context)
+
+def criar_tfc_view(request):
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect(reverse_lazy('portfolio:login'))
+
+    form = TfcForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect(reverse_lazy('portfolio:projetos'))
+
+    context = {
+        'form': form,
+    }
+
+    return render(request, 'portfolio/criar_tfc.html', context)
+
+@login_required
+def editar_tfc_view(request, tfc_id):
+    tfc = Tfc.objects.get(id=tfc_id)
+    form = TfcForm(request.POST or None, instance=tfc)
+
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect(reverse_lazy('portfolio:projetos'))
+
+    context = {
+        'form': form, 
+        'tfc_id': tfc_id
+    }
+
+    return render(request, 'portfolio/editar_tfc.html', context)
 
 def pw_view(request):
     if request.method == 'POST':

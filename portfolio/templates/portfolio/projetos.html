@@ -1,7 +1,7 @@
 {% extends 'portfolio/layout.html' %}
 
 {% block main %}
-<h1 class="titulo">Projetos/TFC</h1>
+<h1 class="titulo">Projetos</h1>
 <a class="button-projetos" href="{% url 'portfolio:criar_projeto' %}">Criar Projeto</a>
 <div class="projetos">
     {% for projeto in projetos %}
@@ -12,14 +12,40 @@
         <br>
         <p>{{projeto.cadeira}}</p>
         <p>Participantes: {% for participante in projeto.participantes.all %} 
-            <a class="link-pessoa" href="{{participante.link1}}" target="_blank">{{participante.nome}}</a> / <a class="link-pessoa" href="{{professor.link2}}" target="_blank">Github</a> <br>{% endfor %}
+            <a class="link-pessoa" href="{{participante.link1}}" target="_blank">{{participante.nome}}</a> / <a class="link-pessoa" href="{{participante.link2}}" target="_blank">Github</a> <br>{% endfor %}
         </p>
         <br>
         <a class="link-pessoa" href="{{projeto.link_github}}" target="_blank">Link para o GitHub</a>
         <br>
-        <br>
         {% if request.user.is_authenticated %}
             <a class="button-edita" href="{% url 'portfolio:editar_projeto' projeto.id %}">Editar</a>              
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+<h1 class="titulo">TFCs</h1>
+<a class="button-tfcs" href="{% url 'portfolio:criar_tfc' %}">Criar TFC</a>
+<div class="tfcs">
+    {% for tfc in tfcs %}
+    <div class="tfc">     
+        <p class="tit-projeto">{{tfc.titulo}} / {{tfc.ano_realizacao}}</p>
+        <br>
+        <p>{{tfc.resumo}}</p>
+        <br>
+        <p>Autores: {% for autor in tfc.autores.all %} 
+            <a class="link-pessoa" href="{{autor.link1}}" target="_blank">{{autor.nome}}</a> / <a class="link-pessoa" href="{{autor.link2}}" target="_blank">Github</a> <br>{% endfor %}
+        </p>
+        <br>
+        <p>Orientadores: {% for orientador in tfc.orientadores.all %} 
+            <a class="link-pessoa" href="{{orientador.link1}}" target="_blank">{{orientador.nome}}</a> / <a class="link-pessoa" href="{{orientador.link2}}" target="_blank">Github</a> <br>{% endfor %}
+        </p>
+        <br>
+        <a class="link-pessoa" href="{{tfc.link_github}}" target="_blank">Link para o GitHub</a>
+        <a class="link-pessoa" href="{{tfc.link_video}}" target="_blank">Link para o Video</a>
+        <br>
+        <p><img class="img-tfc" src="{{tfc.image.url}}"></p>
+        {% if request.user.is_authenticated %}
+            <a class="button-edita" href="{% url 'portfolio:editar_tfc' tfc.id %}">Editar</a>              
         {% endif %}
     </div>
     {% endfor %}
