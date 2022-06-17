@@ -939,3 +939,13 @@ footer {
   margin: auto;
   display: block;
 }
+
+.video {
+  position: relative;
+  left: 660px;
+  width: 580px;
+  height: 335px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 20px;
+}
