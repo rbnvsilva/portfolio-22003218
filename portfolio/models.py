@@ -44,13 +44,12 @@ class Projeto(models.Model):
 
 class Tfc(models.Model):
     titulo = models.CharField(max_length=50)
-    resumo = models.TextField(max_length=500)
+    resumo = models.TextField(max_length=800)
     ano_realizacao = models.IntegerField()
     autores = models.ManyToManyField(Pessoa, related_name="autores")
     orientadores = models.ManyToManyField(Pessoa)
     image = models.FileField(upload_to="uploads/")
     link_github = models.CharField(max_length=300)
-    link_vídeo = models.CharField(max_length=300)
 
     def __str__(self):
         return self.titulo
